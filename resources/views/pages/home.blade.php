@@ -1,7 +1,7 @@
 @extends('layouts.main-layout')
 
 @section('content')
-    
-    <h1>Public</h1>
-
+    <div class="container">
+        <h1 class="m-5">Public</h1>
+    </div>
 @endsection

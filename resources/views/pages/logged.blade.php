@@ -4,7 +4,7 @@
 <title>Logged</title>
 
 @section('content')
-    
-    <h1>Private</h1>
-
+    <div class="container">
+        <h1 class="m-5">Public</h1>
+    </div>
 @endsection
