@@ -20,7 +20,7 @@ Route::get('/', [MainController::class, 'home'])
     ->name('home');
 // Logged Privata
 Route::get('/logged', [MainController::class, 'logged'])
-        // ->middleware(['auth', 'verified'])
+    ->middleware(['auth', 'verified'])
     ->name('logged');
 
 Route::get('/dashboard', function () {
