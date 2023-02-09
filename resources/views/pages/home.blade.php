@@ -8,6 +8,7 @@
             @foreach ($projects as $project)
                 <li>
                     <a href="{{ route('project.show', $project) }}">
+                        ID: {{ $project -> id }}<br>
                         Name: {{ $project -> name }}<br>
                         Description: {{ $project -> description }}<br>
                         Image: {{ $project -> main_image }}<br>

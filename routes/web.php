@@ -32,6 +32,10 @@ Route::get('/project/show/{project}', [MainController::class, 'projectShow'])
 Route::get('/logged/project/show/{project}', [MainController::class, 'loggedProjectShow'])
     ->name('loggedProject.show');
 
+// Delete Project For Public and Private
+Route::get('/logged/project/delete/{project}', [MainController::class, 'projectDelete'])
+    ->name('project.delete');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

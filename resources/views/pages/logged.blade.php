@@ -11,6 +11,7 @@
             @foreach ($projects as $project)
                 <li>
                     <a href="{{ route('loggedProject.show', $project) }}">
+                        ID: {{ $project -> id }}<br>
                         Name: {{ $project -> name }}<br>
                         Description: {{ $project -> description }}<br>
                         Image: {{ $project -> main_image }}<br>
@@ -18,6 +19,7 @@
                         Repo-Link: {{ $project -> repo_link }}<br>
                     </a>
                     <br>
+                    <a href="{{ route('project.delete', $project) }}">X</a>
                 </li>
             @endforeach
         </ul>

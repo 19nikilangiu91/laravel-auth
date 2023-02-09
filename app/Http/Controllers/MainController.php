@@ -42,4 +42,14 @@ class MainController extends Controller
     {
         return view('pages.loggedShow', compact('project'));
     }
+
+    // Delete Project For Public and Private
+    public function projectDelete(project $project)
+    {
+
+        $project->delete();
+
+        return redirect()->route('home', 'logged');
+    }
+
 }
