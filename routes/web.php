@@ -44,6 +44,14 @@ Route::get('/logged/project/create', [MainController::class, 'projectCreate'])
 Route::post('/logged/project/create/store/', [MainController::class, 'projectStore'])
     ->name('project.store');
 
+// Edit Single Content for Public and Private
+Route::get('/logged/project/edit/{project}', [MainController::class, 'projectEdit'])
+    ->name('project.edit');
+
+// Update Single Content for Public and Private
+Route::post('/logged/project/update/{project}', [MainController::class, 'projectUpdate'])
+    ->name('project.update');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
