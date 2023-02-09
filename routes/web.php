@@ -15,13 +15,14 @@ use App\Http\Controllers\MainController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Home Pubblica
+// Home Pubblica All Contents
 Route::get('/', [MainController::class, 'home'])
     ->name('home');
-// Logged Privata
+// Logged Privata All Contents
 Route::get('/logged', [MainController::class, 'logged'])
     ->middleware(['auth', 'verified'])
     ->name('logged');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
