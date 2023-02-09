@@ -15,7 +15,7 @@ class MainController extends Controller
     //     return view('pages.home');
     // }
 
-    // Home Pubblica All Contents
+    // Home Pubblic All Contents
     public function home()
     {
         $projects = Project::all();
@@ -23,11 +23,23 @@ class MainController extends Controller
         return view('pages.home', compact('projects'));
     }
 
-    // Logged Privata All Contents
+    // Logged Private All Contents
     public function logged()
     {
         $projects = Project::all();
 
         return view('pages.logged', compact('projects'));
+    }
+
+    // Show Public Single Content
+    public function projectShow(project $project)
+    {
+        return view('pages.projectShow', compact('project'));
+    }
+
+    // Show Logged Private Single Content
+    public function loggedProjectShow(project $project)
+    {
+        return view('pages.loggedShow', compact('project'));
     }
 }
