@@ -1,0 +1,34 @@
+a {
+    text-decoration: none;
+    color: black;
+
+    img {
+        width: 200px;
+        height: 150px;
+    }
+}
+
+ul {
+    list-style-type: none;
+
+    .project {
+        color: black;
+        padding: 20px;
+        margin: 20px;
+        border: 1px solid black;
+    }
+}
+
+.delete {
+    border: 1px solid black;
+    color: black;
+    padding: 5px;
+}
+
+.edit {
+    border: 1px solid black;
+    color: black;
+    padding: 5px;
+    text-align: center;
+    margin: 10px;
+}

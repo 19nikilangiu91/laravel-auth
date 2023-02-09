@@ -1,0 +1,15 @@
+img {
+    width: 200px;
+    height: 150px;
+}
+
+ul {
+    list-style-type: none;
+
+    .project {
+        color: black;
+        padding: 20px;
+        margin: 20px;
+        border: 1px solid black;
+    }
+}

@@ -1,5 +1,11 @@
 @import '~bootstrap/scss/bootstrap';
 @import "./partials/header.scss";
+@import "./partials/home.scss";
+@import "./partials/projectShow.scss";
+@import "./partials/logged.scss";
+@import "./partials/loggedShow.scss";
+@import "./partials/projectCreate.scss";
+@import "./partials/projectEdit.scss";
 
 .logo {
     height: 100px;

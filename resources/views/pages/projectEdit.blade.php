@@ -6,21 +6,21 @@
     <form method="POST" action="{{ route('project.update', $project) }}" class="m-5">
         @csrf
         <label for="name">Name:</label>
-        <input type="text" name="name" value={{$project->name}}>
+        <input type="text" name="name" class="name" value={{$project->name}}>
         <br>
         <label for="description">Description:</label>
-        <input type="text" name="description" value={{$project->description}}>
+        <input type="text" name="description" class="description" value={{$project->description}}>
         <br>
         <label for="main_image">Main Image:</label>
-        <input type="text" name="main_image" value={{$project->main_image}}>
+        <input type="text" name="main_image" class="main_image" value={{$project->main_image}}>
         <br>
         <label for="release_date">Release Date:</label>
-        <input type="date" name="release_date" value={{$project->release_date}}>
+        <input type="date" name="release_date" class="release_date" value={{$project->release_date}}>
         <br>
         <label for="repo_link">Repo Link:</label>
-        <input type="text" name="repo_link" value={{$project->repo_link}}>
+        <input type="text" name="repo_link"  class="repo_link" value={{$project->repo_link}}>
         <br>
-        <input type="submit" value="Update Project">
+        <input type="submit" class="button" value="Update Project">
     </form>
 
 @endsection
