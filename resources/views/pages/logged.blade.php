@@ -21,6 +21,9 @@
                     </a>
                     <br>
                     <a href="{{ route('project.delete', $project) }}">X</a>
+                    <a href="{{ route('project.edit', $project) }}" class="edit">
+                        EDIT
+                    </a>
                 </li>
             @endforeach
         </ul>
