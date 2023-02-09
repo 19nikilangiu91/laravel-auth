@@ -36,6 +36,14 @@ Route::get('/logged/project/show/{project}', [MainController::class, 'loggedProj
 Route::get('/logged/project/delete/{project}', [MainController::class, 'projectDelete'])
     ->name('project.delete');
 
+// Create Logged Private Single Content
+Route::get('/logged/project/create', [MainController::class, 'projectCreate'])
+    ->name('project.create');
+
+// Store Single Content for Public and Private
+Route::post('/logged/project/create/store/', [MainController::class, 'projectStore'])
+    ->name('project.store');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
