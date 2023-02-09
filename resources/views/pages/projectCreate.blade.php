@@ -20,7 +20,7 @@
         <label for="repo_link">Repo Link:</label>
         <input type="text" name="repo_link">
         <br>
-        <input type="submit" value="CREATE NEW TASK">
+        <input type="submit" value="Create New Project">
     </form>
 
 @endsection
