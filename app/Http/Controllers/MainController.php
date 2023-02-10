@@ -74,14 +74,6 @@ class MainController extends Controller
             'repo_link' => 'required|string|unique:projects,repo_link',
         ]);
 
-        $project = new Project();
-
-        $project->name = $data['name'];
-        $project->description = $data['description'];
-        $project->main_image = $data['main_image'];
-        $project->release_date = $data['release_date'];
-        $project->repo_link = $data['repo_link'];
-
         $img_path = Storage::put('uploads', $data['main_image']);
         $data['main_image'] = $img_path;
 
