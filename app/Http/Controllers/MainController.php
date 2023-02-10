@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 // Importo il model "Project"
 use App\Models\Project;
 
+// Importo lo "storage"
+use Illuminate\Support\Facades\Storage;
+
 class MainController extends Controller
 {
     // Home Pubblica
@@ -49,7 +52,7 @@ class MainController extends Controller
 
         $project->delete();
 
-        return redirect()->route('home', 'logged');
+        return redirect()->route('home');
     }
 
     // Create Logged Private Single Content
@@ -66,9 +69,9 @@ class MainController extends Controller
         $data = $request->validate([
             'name' => 'required|string|max:64|unique:projects,name',
             'description' => 'nullable|string',
-            'main_image' => 'required|string|unique:projects,main_image',
+            'main_image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
             'release_date' => 'required|date',
-            'repo_link' => 'required|string|unique:projects,repo_link|',
+            'repo_link' => 'required|string|unique:projects,repo_link',
         ]);
 
         $project = new Project();
@@ -79,9 +82,12 @@ class MainController extends Controller
         $project->release_date = $data['release_date'];
         $project->repo_link = $data['repo_link'];
 
-        $project->save();
+        $img_path = Storage::put('uploads', $data['main_image']);
+        $data['main_image'] = $img_path;
 
-        return redirect()->route('home', 'logged');
+        $project = Project::create($data);
+
+        return redirect()->route('home', $project);
     }
 
     // Edit Single Content for Public and Private
@@ -98,7 +104,7 @@ class MainController extends Controller
         $data = $request->validate([
             'name' => 'required|string|max:64|unique:projects,name,' . $project->id,
             'description' => 'nullable|string',
-            'main_image' => 'required|string|unique:projects,main_image,' . $project->id,
+            'main_image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
             'release_date' => 'required|date',
             'repo_link' => 'required|string|unique:projects,repo_link,' . $project->id,
         ]);
