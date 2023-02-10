@@ -21,7 +21,8 @@ class ProjectFactory extends Factory
             'description' => fake()->boolean()
             ? fake()->paragraph()
             : null,
-            'main_image' => fake()->unique()->imageUrl(640, 480, 'animals', true),
+            // Commento main_image per farsì che con il db:seed possa apparire la mia immagine di default.
+            // 'main_image' => fake()->unique()->imageUrl(640, 480, 'animals', true),
             'release_date' => fake()->date(),
             'repo_link' => fake()->unique()->url(),
         ];
