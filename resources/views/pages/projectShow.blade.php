@@ -6,13 +6,13 @@
     <ul class="m-5">
         <li class="project d-flex align-items-center">
             <div>
-                <img src="{{$project->main_image}}" alt="{{$project->main_image}}">
+                <img src="{{ asset('storage/' . $project -> main_image) }}" alt="">
             </div>
             <div class="mx-3">
                 Name: {{ $project -> name }}<br>
                 Description: {{ $project -> description }}<br>
                 Release: {{ $project -> release_date }}<br>
-                Repo-Link: {{ $project -> repo_link }}<br>
+                Repo-Link: <a href="{{ $project -> repo_link }}">GitHub</a>
             </div>
         </li>
     </ul>

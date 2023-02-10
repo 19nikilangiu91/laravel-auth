@@ -7,9 +7,9 @@
         <ul class="m-5">
             @foreach ($projects as $project)
                 <li class="project d-flex align-items-center">
-                    <a href="{{ route('project.show', $project) }}" class="d-flex">
+                    <a href="{{ route('project.show', $project) }}">
                         <div>
-                            <img src="{{$project->main_image}}" alt="{{$project->main_image}}">
+                            <img src="{{ asset('storage/' . $project -> main_image) }}" alt="">
                         </div>
                         <div class="mx-3">
                             Name: {{ $project -> name }}<br>
