@@ -4,7 +4,7 @@
 <div class="container">
     <h1 class="m-5">Project</h1>
     <ul class="m-5">
-        <li class="project d-flex justify-content-center align-items-center">
+        <li class="project d-flex align-items-center">
             <div>
                 <img src="{{$project->main_image}}" alt="{{$project->main_image}}">
             </div>

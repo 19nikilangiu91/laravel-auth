@@ -10,8 +10,8 @@
         <a class="m-5 text-danger" href="{{ route('project.create') }}">Create a New Project</a>
         <ul class="m-5">
             @foreach ($projects as $project)
-                <li class="project d-flex justify-content-center align-items-center">
-                    <a href="{{ route('loggedProject.show', $project) }}" class="d-flex">
+                <li class="project d-flex align-items-center">
+                    <a href="{{ route('loggedProject.show', $project) }}" class="d-flex w-100">
                         <div>
                             <img src="{{$project->main_image}}" alt="{{$project->main_image}}">
                         </div>
