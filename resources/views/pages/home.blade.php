@@ -15,7 +15,7 @@
                             Name: {{ $project -> name }}<br>
                             Description: {{ $project -> description }}<br>
                             Release: {{ $project -> release_date }}<br>
-                            Repo-Link: {{ $project -> repo_link }}<br>
+                            Repo-Link: <a href="{{ $project -> repo_link }}">GitHub</a>
                         </div>
                     </a>
                 </li>
