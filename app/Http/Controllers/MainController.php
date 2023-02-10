@@ -64,7 +64,7 @@ class MainController extends Controller
     {
 
         $data = $request->validate([
-            'name' => 'required|string|unique:projects,name|max:64',
+            'name' => 'required|string|max:64|unique:projects,name',
             'description' => 'nullable|string',
             'main_image' => 'required|string|unique:projects,main_image',
             'release_date' => 'required|date',
@@ -96,11 +96,11 @@ class MainController extends Controller
     {
 
         $data = $request->validate([
-            'name' => 'required|string|unique:projects,name|max:64',
+            'name' => 'required|string|max:64|unique:projects,name,' . $project->id,
             'description' => 'nullable|string',
-            'main_image' => 'required|string|unique:projects,main_image',
+            'main_image' => 'required|string|unique:projects,main_image,' . $project->id,
             'release_date' => 'required|date',
-            'repo_link' => 'required|string|unique:projects,repo_link|',
+            'repo_link' => 'required|string|unique:projects,repo_link,' . $project->id,
         ]);
 
         $project->name = $data['name'];
